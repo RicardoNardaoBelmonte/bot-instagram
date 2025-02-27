@@ -1,25 +1,52 @@
-# Automação Instagram
-Este projeto é uma automação desenvolvida com o objetivo de interagir automaticamente com o Instagram. O script automatiza as etapas de login na plataforma, navegação até uma página específica (perfil de um usuário ou uma publicação), e a realização de ações como curtir e comentar em uma foto, caso não esteja curtida ainda.
+# Automação Instagram com Selenium
+Este projeto utiliza a biblioteca Selenium para automatizar interações no Instagram. O script realiza login, navega até um perfil específico e curte publicações que ainda não foram curtidas. Ele é executado em um loop, repetindo o processo a cada 24 horas.
 
-# Funcionalidades
-Acesso ao Instagram: O script abre o navegador e acessa a página inicial do Instagram.
+## Funcionalidades
+- Acesso ao Instagram: O script abre o navegador e acessa a página inicial do Instagram.
 
-Login Automático: Realiza o login na conta do usuário, preenchendo automaticamente os campos de usuário e senha.
+- Login Automático: Realiza o login na conta do usuário, preenchendo automaticamente os campos de usuário e senha.
 
-Navegação Personalizada: Direciona até uma página escolhida pelo usuário.
+- Navegação Personalizada: Direciona até uma página escolhida pelo usuário (por exemplo, o perfil da Nike).
 
-Curtir Publicação: Verifica se a publicação está ou não curtida e, caso não esteja, realiza a ação de curtir.
+- Curtir Publicação: Verifica se a publicação está ou não curtida e, caso não esteja, realiza a ação de curtir.
 
-Comentário Automático: Insere um comentário na publicação de acordo com o conteúdo definido no script.
+- Loop de Execução: O script é executado em um loop infinito, com um intervalo de 24 horas entre cada execução.
 
-# Tecnologias Utilizadas
-PyAutoGUI: Para automatizar ações do mouse e teclado.
+## Tecnologias Utilizadas
+Selenium: Para automatizar a interação com o navegador e a plataforma do Instagram.
 
-Time: Para gerenciar pausas e intervalos durante a execução do script.
+WebDriverWait: Para gerenciar a espera por elementos na página.
 
-Webbrowser: Para abrir o navegador e acessar o Instagram.
+Time (Sleep): Para gerenciar pausas e intervalos durante a execução do script.
 
-# Observações
-Para usar, basta você se direcionar ao arquivo automacao.py e setar seu email e senha do Instagram para a realização do login.
+## Como Usar
+- Instalação das Dependências: 
 
-Sete também a página ou perfil escolhido para a automação acessá-la de forma automatizada. Os campos a serem setados se encontram nas linhas 17, 20 e 31.
+Certifique-se de ter o Selenium instalado. Caso não tenha, instale usando o comando:
+
+```bash
+pip install selenium
+```
+
+## Funcionamento:
+
+- O script abrirá o navegador, fará login no Instagram e navegará até o perfil especificado.
+
+- Ele verificará a primeira publicação e a curtirá, caso ainda não esteja curtida.
+
+- O script entrará em um loop, repetindo o processo a cada 24 horas.
+
+## Estrutura do Script
+O script está organizado da seguinte forma:
+
+Inicialização do WebDriver:
+Configura o navegador Chrome com opções personalizadas, como modo anônimo, tamanho da janela e idioma.
+
+Login no Instagram:
+Preenche os campos de usuário e senha e clica no botão "Entrar" (Deixe configurado suas configurações nas linhas 59 e 63).
+
+Pagina desejada:
+Caso queira alterar a página de verificação de curtida basta alterar o link na linha 72.
+
+## Loop Infinito:
+O script repete o processo a cada 24 horas.
